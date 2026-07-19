@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exit Vehicle</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="exit-wrapper">
+
+    <div class="exit-box">
+        <h1>🚘 Exit Vehicle</h1>
+        <p class="subtitle">Enter your details to check fine</p>
+
+        <form method="POST">
+
+            <div class="field">
+                <label>Vehicle Number</label> <br>
+                <input type="text" name="vehicle" required>
+                
+            </div>
+
+            <div class="field">
+                 <label>Token Number</label> <br>
+                <input type="text" name="token" required>
+               
+            </div>
+
+            <button type="submit" class="btn-exit">
+                Check Fine
+            </button>
+
+        </form>
+
+        <a href="/" class="back">← Back to Parking</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

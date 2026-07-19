@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Parking</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Smart Parking System using Loyalty pricing 🚗</h1>
+<h3>Available Slots: {{ available }}</h3>
+
+<div class="input-box">
+<input id="vehicle" placeholder="Vehicle Number">
+<input id="phone" placeholder="Phone Number">
+<input id="hours" type="number" placeholder="Expected Hours">
+</div>
+
+<div class="grid">
+{% for slot in slots %}
+<div class="slot {% if slot[1]==0 %}free{% else %}booked{% endif %}"
+onclick="bookSlot('{{ slot[0] }}', this)">
+{{ slot[0] }}
+</div>
+{% endfor %}
+</div>
+
+<br>
+<a href="/exit">Exit Vehicle</a>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
